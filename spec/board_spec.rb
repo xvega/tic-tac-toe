@@ -7,6 +7,10 @@ describe 'board creation' do
     @board = Board.new(@board_size, ' ').create_board
   end
 
+  it 'creates a not nil board' do
+    expect(@board).to_not eq(nil)
+  end
+
   it 'returns a board with the size and value given' do
     expect(@board.size).to eq(@board_size)
   end
@@ -19,6 +23,11 @@ describe 'board creation' do
   it 'initializes the board with an uniq delimiter in the grid' do
     board = @board.map(&:uniq).uniq.size == 1
     expect(board).to eq(true)
+  end
+
+  it 'creates board if size is greater than 2' do
+    board_size = @board.size
+    expect(board_size).to be >= 2
   end
 
 end
