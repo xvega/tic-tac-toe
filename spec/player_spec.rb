@@ -19,4 +19,9 @@ describe 'player creation' do
     expect(@player.win?(board)).to eq(true)
   end
 
+  it 'picks a winner based on a column for a default 3x3 grid' do
+    board = [['X','X','O'],['X', ' ', 'O'],['O',' ','O']]
+    expect(@player.win?(board)).to eq(true)
+  end
+
 end

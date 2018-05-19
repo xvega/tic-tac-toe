@@ -11,6 +11,7 @@ class Player < GameLogic
 
   def win?(board)
     return true if @game.check_rows(board)
+    return true if @game.check_rows(board.transpose)
   end
 
   def print_winner
