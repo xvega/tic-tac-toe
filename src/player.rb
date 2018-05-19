@@ -1,4 +1,5 @@
 require File.expand_path("../../src/game_logic", __FILE__)
+require 'matrix'
 
 class Player < GameLogic
   attr_reader :cpu, :human
@@ -12,6 +13,7 @@ class Player < GameLogic
   def win?(board)
     return true if @game.check_rows(board)
     return true if @game.check_rows(board.transpose)
+    return true if @game.check_diagonals(board)
   end
 
   def print_winner

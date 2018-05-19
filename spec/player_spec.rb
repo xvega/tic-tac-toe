@@ -24,4 +24,9 @@ describe 'player creation' do
     expect(@player.win?(board)).to eq(true)
   end
 
+  it 'picks a winner based on a diagonal for a default 3x3 grid' do
+    board = [['X','O','O'],[' ', 'X', 'O'],[' ',' ', 'X']]
+    expect(@player.win?(board)).to eq(true)
+  end
+
 end
