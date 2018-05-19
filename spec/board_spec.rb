@@ -16,4 +16,9 @@ describe 'board creation' do
     expect { board.draw_grid(@board) }.to output(/\A[0-9]|\n|\||\s\Z/).to_stdout
   end
 
+  it 'initializes the board with an uniq delimiter in the grid' do
+    board = @board.map(&:uniq).uniq.size == 1
+    expect(board).to eq(true)
+  end
+
 end
