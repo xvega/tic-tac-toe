@@ -10,4 +10,8 @@ describe 'player creation' do
     expect(@player.cpu && @player.human).to_not eq(nil)
   end
 
+  it 'assigns a different value to each player' do
+    expect(@player.cpu != @player.human).to eq(true)
+  end
+
 end

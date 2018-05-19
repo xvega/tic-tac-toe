@@ -1,4 +1,4 @@
-require './player'
+require File.expand_path("../../src/player", __FILE__)
 
 class Main
   def initialize

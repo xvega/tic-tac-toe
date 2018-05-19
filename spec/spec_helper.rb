@@ -1,3 +1,4 @@
 require 'yaml'
-require_relative '../player'
-require_relative '../board'
+require File.expand_path("../../src/player", __FILE__)
+require File.expand_path("../../src/board", __FILE__)
+require File.expand_path("../../src/game_logic", __FILE__)
