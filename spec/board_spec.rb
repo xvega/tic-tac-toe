@@ -11,4 +11,9 @@ describe 'board creation' do
     expect(@board.size).to eq(@board_size)
   end
 
+  it 'prints the grid content when draw_grid is called' do
+    board = Board.new(@board_size, ' ')
+    expect { board.draw_grid(@board) }.to output(/\A[0-9]|\n|\||\s\Z/).to_stdout
+  end
+
 end

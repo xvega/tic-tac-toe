@@ -14,4 +14,12 @@ class Board
     end
     board
   end
+
+  def draw_grid(board)
+    puts '        ' + (0..board.size - 1).to_a.join('  |  ')
+    board.each_with_index do |r, index|
+      puts " #{index}     " + r.each { |p| p }.join('   | ')
+    end
+  end
+
 end
