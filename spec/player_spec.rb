@@ -14,4 +14,9 @@ describe 'player creation' do
     expect(@player.cpu != @player.human).to eq(true)
   end
 
+  it 'picks a winner based on a row for a default 3x3 grid' do
+    board = [['X','X','X'],[' ', ' ', 'O'],['O','O',' ']]
+    expect(@player.win?(board)).to eq(true)
+  end
+
 end

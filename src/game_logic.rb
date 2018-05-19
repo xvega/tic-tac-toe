@@ -9,7 +9,10 @@ class GameLogic
   protected
 
   def check_rows(board)
-    true
+    board.each do |row|
+      @winner = row.uniq.first if row.uniq.size == 1 && !row.uniq.include?(' ')
+    end
+    true if @winner
   end
 
   def generate_random_coord
